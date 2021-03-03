@@ -21,7 +21,22 @@ export default function App() {
 
 function DNSForm() {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  async function onSubmit(data) {
+    const res = await fetch("https://dns.sammy.cloud/api", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        password: data.secret,
+        name: data.name,
+        ip: data.ip,
+      }),
+    });
+
+    const stuff = await res.json();
+    if (stuff.error) return alert(`Error! ${stuff.error}`);
+    alert("Success! DNS created!");
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
