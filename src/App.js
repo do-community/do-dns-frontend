@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 export default function App() {
   return (
     <div className="min-h-screen py-20 bg-gradient-to-br from-indigo-500 to-blue-800 flex items-center justify-center">
-      <div className="md:w-3/4 lg:w-1/3 mx-auto">
+      <div className="w-full px-12 md:px-0 md:w-3/4 lg:w-1/3 mx-auto">
         {/* header */}
         <h2 className="font-extrabold text-white text-5xl text-center mb-16">
           <span className="block text-2xl mb-2 text-blue-100">
