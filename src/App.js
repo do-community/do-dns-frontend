@@ -23,7 +23,7 @@ function DNSForm() {
   const { register, handleSubmit, errors } = useForm();
 
   async function onSubmit(data) {
-    const res = await fetch("https://dns.sammy.cloud/api", {
+    const res = await fetch("https://dns.scubaschool.cloud/api", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
